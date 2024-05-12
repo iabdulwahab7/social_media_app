@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "802457816387",
+    "project_id": "gs-social-1187a",
+    "storage_bucket": "gs-social-1187a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802457816387:android:5bad922100e6f7869ef3f6",
+        "android_client_info": {
+          "package_name": "com.gstech.gs_social"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1SU0Z0jAmUhSUq63RoBy75Houk7Yw93o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802457816387:android:ad48a5e09467be2b9ef3f6",
+        "android_client_info": {
+          "package_name": "com.gstech.gssocial"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1SU0Z0jAmUhSUq63RoBy75Houk7Yw93o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
