@@ -6,8 +6,8 @@ class AppColors {
   static const Color primaryColor = Color.fromARGB(255, 238, 153, 74);
   static const Color secondaryColor = Color.fromRGBO(150, 130, 29, 1);
 
-  static const Color primaryTextTextColor = Color.fromARGB(255, 255, 255, 255);
-  static const Color secondaryTextColor = Color.fromARGB(255, 0, 0, 0);
+  static const Color primaryTextColor = Color.fromARGB(255, 0, 0, 0);
+  static const Color secondaryTextColor = Color.fromARGB(255, 255, 255, 255);
 
   static const Color primaryIconColor = Color.fromARGB(255, 13, 13, 13);
   static const Color iconBackgroundColor = Color(0xffdfdfe1);

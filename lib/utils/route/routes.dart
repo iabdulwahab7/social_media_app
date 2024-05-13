@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gs_social/model_view/splash/splash_view.dart';
+import 'package:gs_social/view/login/login_view.dart';
+import 'package:gs_social/view/signup/signup_view.dart';
+import 'package:gs_social/view/splash/splash_view.dart';
 import 'package:gs_social/utils/route/route_name.dart';
 
 class Routes {
@@ -7,6 +9,10 @@ class Routes {
     switch (settings.name) {
       case RoutesName.splashView:
         return MaterialPageRoute(builder: (_) => const SplashView());
+      case RoutesName.loginView:
+        return MaterialPageRoute(builder: (_) => const LoginView());
+      case RoutesName.signUpView:
+        return MaterialPageRoute(builder: (_) => const SignUpView());
 
       default:
         return MaterialPageRoute(builder: (_) {
