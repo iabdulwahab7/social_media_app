@@ -97,7 +97,10 @@ class _LoginViewState extends State<LoginView> {
                   Align(
                     alignment: Alignment.centerRight,
                     child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(
+                              context, RoutesName.forgotPasswordView);
+                        },
                         child: Text("Forgot Password",
                             style: Theme.of(context)
                                 .textTheme
