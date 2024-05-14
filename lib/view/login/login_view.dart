@@ -6,6 +6,8 @@ import 'package:gs_social/res/component/round_button_widget.dart';
 import 'package:gs_social/res/component/text_form_field_widget.dart';
 import 'package:gs_social/utils/route/route_name.dart';
 import 'package:gs_social/utils/utils.dart';
+import 'package:gs_social/view_model/controller/login_controller.dart';
+import 'package:provider/provider.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -16,7 +18,6 @@ class LoginView extends StatefulWidget {
 
 class _LoginViewState extends State<LoginView> {
   final _formKey = GlobalKey<FormState>();
-  bool loading = false;
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final emailFocusNode = FocusNode();
@@ -73,7 +74,7 @@ class _LoginViewState extends State<LoginView> {
                             prefixIcon: Icons.email_outlined,
                             focusNode: emailFocusNode,
                             onFieldSubmitted: (value) {
-                              Utils().focusNodeMethod(
+                              Utils.focusNodeMethod(
                                   context, emailFocusNode, passwordFocusNode);
                             },
                             onValidator: (value) {
@@ -86,10 +87,7 @@ class _LoginViewState extends State<LoginView> {
                             focusNode: passwordFocusNode,
                             obsecureText: true,
                             prefixIcon: Icons.lock_open_outlined,
-                            onFieldSubmitted: (value) {
-                              Utils().focusNodeMethod(context,
-                                  passwordFocusNode, passwordFocusNode);
-                            },
+                            onFieldSubmitted: (value) {},
                             onValidator: (value) {
                               return value.isEmpty ? "Enter Password" : null;
                             },
@@ -110,13 +108,21 @@ class _LoginViewState extends State<LoginView> {
                                     letterSpacing: 2))),
                   ),
                   SizedBox(height: height * 0.02),
-                  RoundButtonWidget(
-                      loading: loading,
-                      onPress: () {
-                        if (_formKey.currentState!.validate()) {}
-                      },
-                      height: height * 0.06,
-                      title: "Login"),
+                  ChangeNotifierProvider(
+                    create: (_) => LoginController(),
+                    child: Consumer<LoginController>(
+                        builder: (context, provider, child) {
+                      return RoundButtonWidget(
+                          loading: provider.loading,
+                          onPress: () {
+                            if (_formKey.currentState!.validate()) {
+                              provider.login(context, emailController.text,
+                                  passwordController.text);
+                            }
+                          },
+                          title: "Login");
+                    }),
+                  ),
                   SizedBox(height: height * 0.02),
                   InkWell(
                     onTap: () {
