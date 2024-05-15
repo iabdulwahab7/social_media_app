@@ -17,7 +17,7 @@ class RoundButtonWidget extends StatelessWidget {
       this.loading = false,
       required this.title,
       this.height = 50,
-      this.backgroundColor = AppColors.primaryColor,
+      this.backgroundColor = AppColors.primaryButtonColor,
       this.textColor = AppColors.secondaryTextColor});
 
   @override

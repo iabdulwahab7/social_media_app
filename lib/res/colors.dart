@@ -8,9 +8,10 @@ class AppColors {
 
   static const Color primaryTextColor = Color.fromARGB(255, 0, 0, 0);
   static const Color secondaryTextColor = Color.fromARGB(255, 255, 255, 255);
+  static const Color primaryButtonColor = Color.fromARGB(255, 238, 153, 74);
 
   static const Color primaryIconColor = Color.fromARGB(255, 13, 13, 13);
-  static const Color iconBackgroundColor = Color(0xffdfdfe1);
+  static const Color secondaryIconColor = Color(0xffdfdfe1);
 
   static const Color successColor = Color.fromARGB(255, 4, 151, 205);
 
