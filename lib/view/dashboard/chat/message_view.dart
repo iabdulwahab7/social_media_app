@@ -47,7 +47,7 @@ class _MessageViewState extends State<MessageView> {
           children: [
             Expanded(
                 child: ListView.builder(
-                    itemCount: 10,
+                    itemCount: 5,
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: const EdgeInsets.only(right: 50, bottom: 1),
@@ -59,14 +59,20 @@ class _MessageViewState extends State<MessageView> {
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
                                 vertical: 8, horizontal: 8),
-                            child: Text(
-                              index.toString(),
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(
-                                    fontSize: 14,
-                                  ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "Hi dear",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyMedium!
+                                      .copyWith(
+                                        fontSize: 14,
+                                      ),
+                                ),
+                                const Icon(Icons.done_all_rounded)
+                              ],
                             ),
                           ),
                         ),
