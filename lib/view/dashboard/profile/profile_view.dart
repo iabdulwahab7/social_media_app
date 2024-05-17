@@ -1,8 +1,13 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:io';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:gs_social/res/colors.dart';
+import 'package:gs_social/res/component/round_button_widget.dart';
+import 'package:gs_social/utils/route/route_name.dart';
 import 'package:gs_social/utils/utils.dart';
 import 'package:gs_social/view_model/controller/profile_controller.dart';
 import 'package:gs_social/view_model/controller/session_controller.dart';
@@ -17,6 +22,8 @@ class ProfileView extends StatefulWidget {
 
 class _ProfileViewState extends State<ProfileView> {
   final ref = FirebaseDatabase.instance.ref('Users');
+  final auth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height * 1;
@@ -235,21 +242,21 @@ class _ProfileViewState extends State<ProfileView> {
                                     title: "Email",
                                     value: map['email'].toString(),
                                     icon: Icons.email_outlined),
-                                const Spacer(),
-                                // RoundButtonWidget(
-                                //   onPress: () {
-                                //     final auth = FirebaseAuth.instance;
-                                //     try {
-                                //       auth.signOut();
-                                //       SessionController().userId = '';
-                                //       Navigator.pushReplacementNamed(
-                                //           context, RoutesName.loginView);
-                                //     } catch (e) {
-                                //       Utils.toastMessage("Error signing out: $e");
-                                //     }
-                                //   },
-                                //   title: "Logout",
-                                // ),
+                                SizedBox(
+                                  height: height * 0.1,
+                                ),
+                                RoundButtonWidget(
+                                  onPress: () {
+                                    try {
+                                      SessionController().userId = "";
+                                      Navigator.pushReplacementNamed(
+                                          context, RoutesName.loginView);
+                                    } catch (e) {
+                                      Utils.toastMessage(e.toString());
+                                    }
+                                  },
+                                  title: "Logout",
+                                ),
                                 SizedBox(
                                   height: height * 0.02,
                                 ),

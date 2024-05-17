@@ -19,7 +19,6 @@ class Routes {
         return MaterialPageRoute(builder: (_) => const DashboardView());
       case RoutesName.forgotPasswordView:
         return MaterialPageRoute(builder: (_) => const ForgotPasswordView());
-
       default:
         return MaterialPageRoute(builder: (_) {
           return Scaffold(

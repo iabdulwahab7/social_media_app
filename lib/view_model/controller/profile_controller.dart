@@ -1,4 +1,4 @@
-// ignore_for_file: unnecessary_import, prefer_interpolation_to_compose_strings
+// ignore_for_file: unnecessary_import, prefer_interpolation_to_compose_strings, use_build_context_synchronously
 
 import 'dart:io';
 
@@ -23,6 +23,7 @@ class ProfileController with ChangeNotifier {
   final databaseRef = FirebaseDatabase.instance
       .ref()
       .child('Users'); // to get instance for updating the profile pic url
+
   firebase_storage.FirebaseStorage storage =
       firebase_storage.FirebaseStorage.instance; // to upload the image
 
