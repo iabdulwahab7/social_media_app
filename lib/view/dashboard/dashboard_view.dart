@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gs_social/res/colors.dart';
 import 'package:gs_social/view/dashboard/profile/profile_view.dart';
+import 'package:gs_social/view/dashboard/users/user_list_view.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 class DashboardView extends StatefulWidget {
@@ -32,7 +33,7 @@ class _DashboardViewState extends State<DashboardView> {
     return [
       const SafeArea(child: Text("Home")),
       const SafeArea(child: Text("Chat")),
-      const SafeArea(child: Text("UserList")),
+      const SafeArea(child: UserListView()),
       const ProfileView(),
     ];
   }
